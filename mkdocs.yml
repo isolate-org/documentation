@@ -1,0 +1,9 @@
+site_name: Isolate
+pages:
+  - ['index.md', 'Home']
+  - ['home/introduction.md', 'Home', 'Introduction']
+  - ['unit-of-work/getting-started.md', 'Unit of Work', 'Getting Started']
+  - ['unit-of-work/command-handlers.md', 'Unit of Work', 'Command Handlers']
+  - ['unit-of-work/associations.md', 'Unit of Work', 'Associations']
+  - ['lazy-objects/getting-started.md', 'Lazy Objects', 'Getting Started']
+theme: readthedocs
