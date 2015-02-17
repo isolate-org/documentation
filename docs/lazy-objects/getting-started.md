@@ -19,6 +19,7 @@ should be lazy loaded and which method should be replaced.
 Here we have simple exmaple:
 
 ```php
+<?php
 
 use Isolate\LazyObjects\Proxy\ClassName;
 use Isolate\LazyObjects\Proxy\Definition;
@@ -49,3 +50,5 @@ Also method ``removeItem`` should not be called on wrapped object and it should 
 
 Generated proxy is going to implement ``Isolate\LazyObjects\WrappedObject`` interface and it will extend ``Application\Domain\Entity\User``
 so our application will threat it as normal instance of ``Application\Domain\Entity\User``.
+
+Read about [Initializers](initializers.md)
