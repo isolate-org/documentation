@@ -3,9 +3,11 @@ theme_dir: theme
 pages:
   - ['index.md', 'Home']
   - ['unit-of-work/getting-started.md', 'Unit of Work', 'Getting Started']
+  - ['unit-of-work/entity-definition.md', 'Unit of Work', 'Entity Definition']
   - ['unit-of-work/command-handlers.md', 'Unit of Work', 'Command Handlers']
   - ['unit-of-work/associations.md', 'Unit of Work', 'Associations']
   - ['lazy-objects/getting-started.md', 'Lazy Objects', 'Getting Started']
+  - ['lazy-objects/proxy-definition.md', 'Lazy Objects', 'Proxy Definition']
   - ['lazy-objects/initializers.md', 'Lazy Objects', 'Initializers']
   - ['lazy-objects/replacements.md', 'Lazy Objects', 'Replacements']
   - ['integration/symfony-bundle.md', 'Integration', 'Symfony Bundle']

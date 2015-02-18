@@ -29,8 +29,6 @@ associated objects. That's why we need to set triggers for LazyProperty. Trigger
 time when trigger method is execute lazy property value is going to be loaded.
 
 Example:
-
-Example:
 ```php
 
 use Isolate\LazyObjects\Proxy\ClassName;
