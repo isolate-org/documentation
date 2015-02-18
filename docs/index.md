@@ -18,6 +18,13 @@ Isolate also doesn't try to think for you. It will help you by showing how objec
 but it's your job to save it in data storage. Isolate will not generate any SQL queries or http calls, it will just help you to build
 and execute them in proper time.
 
+# Getting started
+
+First you should read about [Entity Definitions](unit-of-work/getting-started.md#entity-definition). You also should
+read something about [Lazy Objects](lazy-objects/getting-started.md) and after that you only need to integrate Isolate
+with your system. If you are using Symfony2 Framework than problem is solved out of the box thanks to
+[Isolate Symfony Bundle](integration/symfony-bundle.md)
+
 # Building Blocks
 
 Isolate is build on top of standalone independent libraries.
