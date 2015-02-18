@@ -9,6 +9,15 @@ use ORM but it doesn't force you to use database as a storage for objects.
 Isolate brings to you all best practices and patterns known from ORMs but with a possibility
 to create your own behavior when entities are created, changed or removed.
 
+# Why Isolate?
+
+To keep your application layers as clean as possible. Thanks to Unit of Work you can keep logic related to creating, updating
+and deleting objects in one place. Why this is important? Because you can for example change your data storage from
+database to webservice without breaking whole system.
+Isolate also doesn't try to think for you. It will help you by showing how object was changed after it was registered
+but it's your job to save it in data storage. Isolate will not generate any SQL queries or http calls, it will just help you to build
+and execute them in proper time.
+
 # Building Blocks
 
 Isolate is build on top of standalone independent libraries.
