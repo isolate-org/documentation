@@ -8,4 +8,6 @@ pages:
   - ['lazy-objects/getting-started.md', 'Lazy Objects', 'Getting Started']
   - ['lazy-objects/initializers.md', 'Lazy Objects', 'Initializers']
   - ['lazy-objects/replacements.md', 'Lazy Objects', 'Replacements']
+  - ['integration/symfony-bundle.md', 'Integration', 'Symfony Bundle']
 theme: readthedocs
+use_directory_urls: false
