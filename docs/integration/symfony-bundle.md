@@ -1,5 +1,20 @@
 # Installation
 
+Add Isolate bundle dependencies to composer.json file in your project
+
+```json
+{
+    require: {
+        "isolate/unit-of-work": "dev-master",
+        "isolate/lazy-objects": "dev-master",
+        "isolate/isolate": "dev-master",
+        "isolate/symfony-bundle": "dev-master",
+    }
+}
+```
+
+> *Before first stable version you need to add all isolate/symfony-bundle dependencies manually.*
+
 Register bundle in application kernel:
 
 ```php
