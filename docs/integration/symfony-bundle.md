@@ -5,10 +5,10 @@ Add Isolate bundle dependencies to composer.json file in your project
 ```json
 {
     require: {
-        "isolate/unit-of-work": "dev-master",
-        "isolate/lazy-objects": "dev-master",
-        "isolate/isolate": "dev-master",
-        "isolate/symfony-bundle": "dev-master",
+        "isolate/unit-of-work": "1.0.*@dev",
+        "isolate/lazy-objects": "1.0.*@dev",
+        "isolate/isolate": "1.0.*@dev",
+        "isolate/symfony-bundle": "1.0.*@dev"
     }
 }
 ```
@@ -234,7 +234,7 @@ class UserController extends Controller
         $unitOfWork = $this->get('isolate.unit_of_work');
         $wrapper    = $this->get('isolate.lazy_objects.wrapper');
 
-        $user = new User(new Username("norechowicz"));
+        $user = new User(new Username("norzechowicz"));
 
         $unitOfWork->register($user);
         if ($wrapper->canWrap($user)) {
