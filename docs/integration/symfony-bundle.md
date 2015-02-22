@@ -109,7 +109,7 @@ class UserFactory implements Factory
         $definition->setObserved([
             new Definition\Property(
                 "followedUsers",
-                new Definition\Association(new ClassName(User::class), Definition\Association::TO_MANY_ENTITIES)
+                new Definition\Association(new ClassName("GithubManager\Domain\User"), Definition\Association::TO_MANY_ENTITIES)
             )
         ]);
 
