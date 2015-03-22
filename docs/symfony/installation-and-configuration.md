@@ -1,4 +1,4 @@
-# Installation
+# Symfony2 - Installation and configuration
 
 Add Isolate bundle dependencies to composer.json file in your project
 
@@ -38,7 +38,7 @@ class AppKernel extends Kernel
 
 ```
 
-# Configuration Reference
+# Bundle Configuration Reference
 
 ```yml
 # app/config/config.yml
@@ -210,46 +210,4 @@ services:
             - { name: isolate.lazy_object.definition.factory }
 ```
 
-# Example Usage
-
-Example of how to you can access Unit of Work and Lazy Objects Wrapper in your application
-
-```php
-<?php
-
-namespace GithubManager\Application\AppBundle\Controller;
-
-use GithubManager\Domain\User;
-use GithubManager\Domain\User\Username;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-class UserController extends Controller
-{
-    /**
-     * @Route("/", name="index")
-     */
-    public function indexAction()
-    {
-        $unitOfWork = $this->get('isolate.unit_of_work');
-        $wrapper    = $this->get('isolate.lazy_objects.wrapper');
-
-        $user = new User(new Username("norzechowicz"));
-
-        $unitOfWork->register($user);
-        if ($wrapper->canWrap($user)) {
-            $user = $wrapper->wrap($user);
-        }
-
-        return $this->render('user/index.html.twig', [
-            'user' => $user
-        ]);
-    }
-}
-
-```
-
-Of course this is only an example, in most cases registration of entities in unit of work and wrapping them is done in
-entity repository.
-To commit changes you can create Symfony response listener that will always execute ``commit`` method on UnitOfWork or
-you can do it manually whenever you need to save your entities.
+Read about [usage examples](usage-examples.md)

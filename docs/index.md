@@ -18,12 +18,31 @@ Isolate also doesn't try to think for you. It will help you by showing how objec
 but it's your job to save it in data storage. Isolate will not generate any SQL queries or http calls, it will just help you to build
 and execute them in proper time.
 
+How does it works?
+```
+$entity = $entityRepository->findEntityById(1);
+
+/* @var \Isolate\Isolate $isolate*/
+$transaction = $isolate->getContext()->openTransaction();
+$transaction->persist($entity);
+
+$entity->update(['property' => 'value']]);
+
+$transaction->closeTransaction();
+```
+
+- ``$isolate`` - entry point for communication between your application and Isolate
+- ``$isolate->getContext()`` - ``Isolate\PersistenceContext`` persistence context. In most cases there will be only one context
+ per application but you can get as many contexts as you need by name ``$isolate->getContext('database'); $isolate->getContext('filesystem')``
+- ``$transaction`` - represents business transaction, in other words transaction holds entities that are going to be modified during
+single business process and saved in storage when transaction is closed.
+
 # Getting started
 
 First you should read about [Entity Definitions](unit-of-work/getting-started.md#entity-definition). You also should
 read something about [Lazy Objects](lazy-objects/getting-started.md) and after that you only need to integrate Isolate
 with your system. If you are using Symfony2 Framework than problem is solved out of the box thanks to
-[Isolate Symfony Bundle](integration/symfony-bundle.md)
+[Isolate Symfony Bundle](symfony/installation-and-configuration.md)
 
 # Building Blocks
 
@@ -35,7 +54,7 @@ Isolate is build on top of standalone independent libraries.
 Those libraries are integrated in [Isolate](https://github.com/isolate-org/isolate).
 You can integrate isolate with following frameworks:
 
-- [Symfony2](integration/symfony-bundle.md)
+- [Symfony2](symfony/installation-and-configuration.md)
 
 # License
 

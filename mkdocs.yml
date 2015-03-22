@@ -2,6 +2,7 @@ site_name: Isolate
 theme_dir: theme
 pages:
   - ['index.md', 'Home']
+  - ['isolate/isolate.md', 'Isolate']
   - ['unit-of-work/getting-started.md', 'Unit of Work', 'Getting Started']
   - ['unit-of-work/entity-definition.md', 'Unit of Work', 'Entity Definition']
   - ['unit-of-work/entity-internal-states.md', 'Unit of Work', 'Entity Internal States']
@@ -11,6 +12,7 @@ pages:
   - ['lazy-objects/proxy-definition.md', 'Lazy Objects', 'Proxy Definition']
   - ['lazy-objects/initializers.md', 'Lazy Objects', 'Initializers']
   - ['lazy-objects/replacements.md', 'Lazy Objects', 'Replacements']
-  - ['integration/symfony-bundle.md', 'Integration', 'Symfony Bundle']
+  - ['symfony/installation-and-configuration.md', 'Symfony', 'Installation and configuration']
+  - ['symfony/usage-examples.md', 'Symfony', 'Usage Examples']
 theme: readthedocs
 use_directory_urls: false
