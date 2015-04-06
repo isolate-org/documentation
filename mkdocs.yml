@@ -13,6 +13,9 @@ pages:
   - ['lazy-objects/initializers.md', 'Lazy Objects', 'Initializers']
   - ['lazy-objects/replacements.md', 'Lazy Objects', 'Replacements']
   - ['symfony/installation-and-configuration.md', 'Symfony', 'Installation and configuration']
+  - ['symfony/transaction-factories.md', 'Symfony', 'Transaction Factories']
   - ['symfony/usage-examples.md', 'Symfony', 'Usage Examples']
+  - ['symfony/doctrine-bridge.md', 'Symfony', 'Doctrine Bridge']
+  - ['doctrine/bridge.md', 'Doctrine', 'Bridge']
 theme: readthedocs
 use_directory_urls: false

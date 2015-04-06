@@ -46,6 +46,10 @@ class AppKernel extends Kernel
 isolate:
     lazy_objects: "%kernel.cache_dir%/isolate/lazy_objects" # default value
     proxy_namespace: "Proxy" # default value
+    default_transaction_factory: isolate.transaction.factory # default value
+    persistence_contexts:
+        context_name:
+            transaction_factory: custom.transaction.factory.service
 ```
 
 # Commands
@@ -210,4 +214,4 @@ services:
             - { name: isolate.lazy_object.definition.factory }
 ```
 
-Read about [usage examples](usage-examples.md)
+Read about [transaction factories](transaction-factories.md)
