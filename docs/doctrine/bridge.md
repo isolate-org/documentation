@@ -6,7 +6,7 @@
 
 However sometimes when project grows we realize that not everything fits to relational database. If there is no abstraction
 that isolate your code (application layer) from doctrine (infrastructure layer) migration to webservice, non relational database
-or any other storage type might be impossible. If your want to avoid such situations in future but you also have no time
+or any other storage type might be impossible. If you want to avoid such situations in future but you also have no time
 for preparing handlers for each entity Isolate have perfect solution.
 Thanks to Isolate Doctrine Bridge you can keep layers isolated and still use the power of Doctrine (ORM and ODM).
 

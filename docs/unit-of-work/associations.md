@@ -1,7 +1,7 @@
 # Associations
 
-In real world we often create associations between entities. For example lets think about order that is associated with
-many items or about order that is associated customer. How to deal with such cases using Unit of Work?
+In real world we often create associations between entities. For example let's think about order that is associated with
+many items and one customer. How to deal with such cases using Unit of Work?
 
 First you need to add to entity property definition information about Association.
 

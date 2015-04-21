@@ -20,7 +20,7 @@ interface Replacement
 ```
 
 Sometimes because of performance reasons there is no need to load all associated objects and operate on them.
-Lets assume that we have a User object that is associated with 1000 Item objects. Now our goal is to remove one element
+Let's assume that we have a User object that is associated with 1000 Item objects. Now our goal is to remove one element
 from this large items collection. Of course we can initialize full collection, remove one element that we are interested in
 and save changes in storage but it will be slow and not effective.
 
