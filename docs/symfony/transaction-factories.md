@@ -1,6 +1,6 @@
 # Transaction Factories
 
-Consider Transaction as simple abstraction used to isolate application from infrastructure layer.
+Consider Transaction as a simple abstraction used to isolate application from infrastructure layer.
 As every abstraction transactions require implementation. Symfony Bundle allows you to define custom transaction factories.
 
 **Transaction Factory** is used by Persistence Context to create transactions each time when it needs to open new transaction.
@@ -49,8 +49,8 @@ $this->assertInstanceOf(
 );
 ```
 
-> Custom transactions factories needs to implement
+> Custom transactions factories need to implement
 > ``Isolate\PersistenceContext\Transaction\Factory`` interface
-> and they needs to be registered as a service in Symfony service container.
+> and they need to be registered as a service in Symfony service container.
 
 Read about [usage examples](usage-examples.md)

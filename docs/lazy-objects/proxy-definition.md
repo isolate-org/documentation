@@ -1,9 +1,9 @@
 # Proxy Definition
 
-Proxy definition is nothing more than a object that describe which class should be wrapped, which properties of this class
+Proxy definition is nothing more than an object that describe which class should be wrapped, which properties of this class
 should be lazy loaded and which method should be replaced.
 
-Here we have simple exmaple:
+Here we have a simple example:
 
 ```php
 <?php
@@ -31,7 +31,7 @@ return new Definition(
 ```
 
 Above definition will tell Wrapper that object which implements ```Application\Domain\Entity\User``` can be wrapped.
-Il will also tell him that property ``items`` of that class should be lazy loaded when method ``getItems`` is executed first time.
+It will also tell him that property ``items`` of that class should be lazy loaded when method ``getItems`` is executed first time.
 Value for ``items`` property should be initialized by ``ItemsInitializer`` instance.
 Also method ``removeItem`` should not be called on wrapped object and it should be replaced by ``RemoveItemReplacement`` instance.
 

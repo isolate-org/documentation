@@ -26,7 +26,7 @@ is passed to target property.
 In most cases there will be no need to initialize all properties immediately after lazy object is created. Mostly because
 of performance. There is no need to create object with all associated objects when we are not going to use any of those
 associated objects. That's why we need to set triggers for LazyProperty. Trigger is nothing more than a method name. First
-time when trigger method is execute lazy property value is going to be loaded.
+time when trigger method is executed lazy property value is going to be loaded.
 
 Example:
 ```php
