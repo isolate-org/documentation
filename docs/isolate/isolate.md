@@ -59,15 +59,15 @@ Doctrine registry under the hood.
 Available methods:
 
 ```php
-Isolate::contains($entity);
+Transaction::contains($entity);
 
-Isolate::persist($entity);
+Transaction::persist($entity);
 
-Isolate::delete($entity);
+Transaction::delete($entity);
 
-Isolate::commit();
+Transaction::commit();
 
-Isolate::rollback();
+Transaction::rollback();
 ```
 
 # Visualization
