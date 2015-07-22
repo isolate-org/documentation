@@ -1,21 +1,25 @@
 site_name: Isolate
 theme_dir: theme
 pages:
-  - ['index.md', 'Home']
-  - ['isolate/isolate.md', 'Isolate']
-  - ['unit-of-work/getting-started.md', 'Unit of Work', 'Getting Started']
-  - ['unit-of-work/entity-definition.md', 'Unit of Work', 'Entity Definition']
-  - ['unit-of-work/entity-internal-states.md', 'Unit of Work', 'Entity Internal States']
-  - ['unit-of-work/command-handlers.md', 'Unit of Work', 'Command Handlers']
-  - ['unit-of-work/associations.md', 'Unit of Work', 'Associations']
-  - ['lazy-objects/getting-started.md', 'Lazy Objects', 'Getting Started']
-  - ['lazy-objects/proxy-definition.md', 'Lazy Objects', 'Proxy Definition']
-  - ['lazy-objects/initializers.md', 'Lazy Objects', 'Initializers']
-  - ['lazy-objects/replacements.md', 'Lazy Objects', 'Replacements']
-  - ['symfony/installation-and-configuration.md', 'Symfony', 'Installation and configuration']
-  - ['symfony/transaction-factories.md', 'Symfony', 'Transaction Factories']
-  - ['symfony/usage-examples.md', 'Symfony', 'Usage Examples']
-  - ['symfony/doctrine-bridge.md', 'Symfony', 'Doctrine Bridge']
-  - ['doctrine/bridge.md', 'Doctrine', 'Bridge']
+  - Home: index.md
+  - Isolate: isolate/isolate.md
+  - Unit of Work:
+    - Getting Started: unit-of-work/getting-started.md
+    - Entity Definition: unit-of-work/entity-definition.md
+    - Entity Internal States: unit-of-work/entity-internal-states.md
+    - Command Handlers: unit-of-work/command-handlers.md
+    - Associations: unit-of-work/associations.md
+  - Lazy Objects:
+    - Getting Started: lazy-objects/getting-started.md
+    - Proxy Definition: lazy-objects/proxy-definition.md
+    - Initializers: lazy-objects/initializers.md
+    - Replacements: lazy-objects/replacements.md
+  - Symfony: 
+    - Installation and configuration: symfony/installation-and-configuration.md
+    - Transaction Factories: symfony/transaction-factories.md
+    - Usage Examples: symfony/usage-examples.md
+    - Doctrine Bridge: symfony/doctrine-bridge.md
+  - Doctrine:
+    - Bridge: doctrine/bridge.md
 theme: readthedocs
 use_directory_urls: false
