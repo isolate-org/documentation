@@ -74,4 +74,4 @@ Transaction::rollback();
 
 You can imagine Isolate just like in following picture
 
-![Isolate](img/isolate.png)
+![Isolate](/img/isolate.png)
