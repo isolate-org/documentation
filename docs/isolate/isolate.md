@@ -31,7 +31,7 @@ Isolate::getContext($name = self::DEFAULT_CONTEXT)
 New context is created when your first time execute ``Isolate::getContext('name')`` method. If your need to access
 same context many times just be sure you are using always the same name (context names are case sensitive).
 
-### Persistence Context**
+### Persistence Context
 
 Persistence context is responsible for opening and closing transactions. At the moment only one transaction can be open.
 New transaction can be open only when old is closed.
@@ -39,15 +39,15 @@ New transaction can be open only when old is closed.
 Available methods:
 
 ```php
-Isolate::getName();
+PersistenceContext::getName();
 
-Isolate::openTransaction();
+PersistenceContext::openTransaction();
 
-Isolate::hasOpenTransaction();
+PersistenceContext::hasOpenTransaction();
 
-Isolate::getTransaction();
+PersistenceContext::getTransaction();
 
-Isolate::closeTransaction();
+PersistenceContext::closeTransaction();
 ```
 
 ### Transaction
