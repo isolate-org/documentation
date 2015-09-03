@@ -16,7 +16,7 @@ layer. It would be as simple as replacing entity change handlers registered in e
 
 ## Isolate Core Concepts
 
-## Isolate
+### Isolate
 
 Can be considered as registry of persistence contexts. Each context is created inside of Isolate instance
 and it will remain there up to the end of this object lifecycle.
