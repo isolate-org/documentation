@@ -41,7 +41,7 @@ In above example persistence context with name ``dummy`` will always use ``Dummy
 transactions. Any other context is going to use default transaction factory which is ``isolate.transaction.factory``
 
 ```php
-$transaction = $this->get('isolate')->getContext('dummy')->openTransaction();
+$transaction = $this->get('isolate')->openTransaction('dummy');
 
 $this->assertInstanceOf(
     'Isolate\Symfony\IsolateBundle\Tests\Functional\Isolate\PersistenceContext\Transaction\DummyTransaction',

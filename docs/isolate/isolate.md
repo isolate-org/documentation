@@ -9,11 +9,6 @@ like in memory environment (without any states).
 This is why Isolate gives you ability to put entities into transactions which are responsible for saving
 states of those entities in storage when they are closed.
 
-Thanks to Isolate Unit of Work is hidden under transaction which can be changed at any point of your application lifecycle.
-Transaction is an missing abstraction between your application and any kind of data storage. Thanks to this simple interface
-you can easily start with database as a storage and switch to the web services without changing anything in your application
-layer. It would be as simple as replacing entity change handlers registered in entity definitions. Isn't that great?
-
 ## Isolate Core Concepts
 
 ### Isolate
@@ -52,9 +47,8 @@ PersistenceContext::closeTransaction();
 
 ### Transaction
 
-Represents all actions required to meet business requirements. IsolateTransaction is nothing more than a wrapper for
-Unit of Work but thanks to such this abstraction it's possible to create DoctrineTransaction which can use
-Doctrine registry under the hood.
+It's an guardian of entities. Every single entity persisted in transaction should be watched and when transaction
+is closed changes should be saved in the storage. 
 
 Available methods:
 

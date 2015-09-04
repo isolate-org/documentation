@@ -14,7 +14,7 @@ public function createAction(Request $request)
     if ($form->isValid()) {
         $registration = $form->getData();
 
-        $transaction = $this->get('isolate')->getContext()->openTransaction();
+        $transaction = $this->get('isolate')->openTransaction();
 
         $transaction->persist($registration->getUser());
 

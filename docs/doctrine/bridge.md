@@ -2,12 +2,11 @@
 
 [Doctrine](http://www.doctrine-project.org/) is an awesome project which can really simplify your life.
 
-**It's recommended to use Doctrine each time when you need to deal with any kind of relational database.**
+**It's recommended to use Doctrine each time when you need to deal with any kind of database.**
 
 However sometimes when project grows we realize that not everything fits to relational database. If there is no abstraction
 that isolate your code (application layer) from doctrine (infrastructure layer) migration to webservice, non relational database
-or any other storage type might be impossible. If you want to avoid such situations in future but you also have no time
-for preparing handlers for each entity Isolate have perfect solution.
+or any other storage type might be impossible. If you want to avoid such situations in future Isolate have perfect solution.
 Thanks to Isolate Doctrine Bridge you can keep layers isolated and still use the power of Doctrine (ORM and ODM).
 
 This bridge provides custom transaction factory ``Isolate\PersistenceContext\Transaction\DoctrineFactory``
@@ -24,4 +23,4 @@ However there is one limitation:
 
 - **ODMTransaction does not allow you to rollback after transaction failure**.
 
-You can use Doctrine Bridge directly in [Symfony Bundle](../symfony/doctrine-bridge.md)
+You can use Doctrine Bridge directly with [Symfony Bundle](../symfony/doctrine-bridge.md)

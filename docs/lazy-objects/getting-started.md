@@ -1,3 +1,5 @@
+# Getting started
+
 Isolate Lazy object is nothing more than simple proxy pattern implementation with possibility to load property value
 when specific method is called or to replace behavior of selected methods.
 

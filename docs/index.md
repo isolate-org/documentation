@@ -1,57 +1,92 @@
-# Welcome to Isolate
+![Isolate](/img/logo.jpg)
 
-Isolate is an abstraction layer for data persistence.
 
-The main goal of Isolate is to provide simple common interface for persistence context which handle transactions.
-Transaction, a series of operations that will be executed in order to store entity changes in any storage, database, filesystem or 
-even webservice. A transaction generally represents any change in storage for a specific entity.
+# Isolate: Treat your data storage as an implementation detail
 
-# Why Isolate?
+Almost every single web application nowadays use some kind of storage. It can be SQL Database, NoSql Database, filesystem or
+some kind of key value storage like Redis. The mission of Isolate is to provide common interfaces that describe the operations
+required to save data in the storage without making your application aware of used storage type.
+Thanks to this simple abstraction layer application isn't bound to any storage type which means it can be easily replaced. 
 
-To keep your application layers as clean as possible. Thanks to Unit of Work you can keep logic related to creating, updating
-and deleting objects in one place. Why this is important? Because you can for example change your data storage from
-database to webservice without breaking whole system.
-Isolate also doesn't try to think for you. It will help you by showing how object was changed after it was registered
-but it's your job to save it in data storage. Isolate will not generate any SQL queries or http calls, it will just help you to build
-and execute them in proper time.
-
-How does it works?
+How does it look like
 ```
 $entity = $entityRepository->findEntityById(1);
 
-/* @var \Isolate\Isolate $isolate*/
-$transaction = $isolate->getContext()->openTransaction();
+$transaction = $isolate->openTransaction();
 $transaction->persist($entity);
 
-$entity->update(['property' => 'value']]);
+$entity->changeEntityState('new value');
 
 $transaction->closeTransaction();
 ```
 
-- ``$isolate`` - entry point for communication between your application and Isolate
-- ``$isolate->getContext()`` - ``Isolate\PersistenceContext`` persistence context. In most cases there will be only one context
- per application but you can get as many contexts as you need by name ``$isolate->getContext('database'); $isolate->getContext('filesystem')``
-- ``$transaction`` - represents business transaction, in other words transaction holds entities that are going to be modified during
-single business process and saved in storage when transaction is closed.
+# Implementations
 
-# Getting started
+Isolate by itself does not implement any data storage, this mean that Isolate gives interfaces you can use to implement your 
+data saving logic. But it does not mean you need to write those implementations every time by yourself. 
 
-First you should read about [Entity Definitions](unit-of-work/getting-started.md#entity-definition). You also should
-read something about [Lazy Objects](lazy-objects/getting-started.md) and after that you only need to integrate Isolate
-with your system. If you are using Symfony2 Framework than problem is solved out of the box thanks to
-[Isolate Symfony Bundle](symfony/installation-and-configuration.md)
+Isolate brings you following implementations.
 
-# Building Blocks
+### Isolate Framework
 
-[Isolate Framework](isolate/framework.md) is build on top of standalone independent libraries.
+*Most flexible but also quite complex implementation of Isolate, it use components like:*
 
-- [Unit of Work](unit-of-work/getting-started.md)
-- [Lazy Objects](lazy-objects/getting-started.md)
+- [Unit of Work](https://github.com/isolate-org/unit-of-work)
+- [Lazy Objects](https://github.com/isolate-org/lazy-objects) 
 
-You can integrate isolate with following frameworks:
+It was made for custom use cases where each change needs to be handled in custom way
+
+**Perfect for:**
+
+- webservice as a storage
+- filesystem as a storage
+- large systems that can't afford auto generated, not optimized Sql queries
+- applications based on pure [Doctrine DBAL](http://www.doctrine-project.org/projects/dbal.html)
+
+
+### Isolate Doctrine Bridge
+
+*Easiest to use, very powerful and probably best choice for most of use cases. This bridge provides 
+[Doctrine ORM and ODM](http://www.doctrine-project.org/) implementation of Isolate Transactions. 
+It has no performance impact.*
+ 
+**Perfect for:**
+
+- startups 
+- applications based on any kind of Sql or NonSql database
+
+
+
+
+
+> *One application can use more than one Isolate implementation, some parts might be stored in database when other 
+> can be stored in webservice. It's quite common in big systems, that is why you should use abstraction layer like Isolate to make 
+> your code not aware of how many or what kind of storage types are used.*
+
+# Integrations
+
+Isolate can be integrated easily with following frameworks:
 
 - [Symfony2](symfony/installation-and-configuration.md)
+- Laravel - we are looking for some help here
+- Zend2 - we are looking for some help here
+
+We also provide extensions for following libraries:
+
+- [Tactician Command Bus](tactician/integration.md)
 
 # License
 
 Isolate, libraries and this documentation are licensed under the [MIT license](https://github.com/isolate-org/documentation/blob/master/LICENSE).
+
+# Code Versioning
+
+Whole Isolate project follows the [semantic versioning rules](http://semver.org/) which means there will be no BC breaks
+between MAJOR version changes. 
+Classes, interfaces and methods that are considered as public API are marked with ``@api`` docblock.
+
+# Contact
+
+If you have any questions about Isolate, or need any help with the implementation or just want to chat we have an 
+[twitter account @isolate_php](https://twitter.com/isolate_php).
+You can also send a email to [norbert@orzechowicz.pl](norbert@orzechowicz.pl)

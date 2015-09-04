@@ -1,7 +1,7 @@
 # Doctrine
 
-Thanks to [Isolate Doctrine Bridge](../doctrine/bridge.md) you can use [Doctrine](http://www.doctrine-project.org/) and
-keep your layers isolated. In order to do so, you need to install and configure bridge first.
+Thanks to [Isolate Doctrine Bridge](../doctrine/bridge.md) you can use [Doctrine](http://www.doctrine-project.org/). 
+In order to do so, you need to install and configure Doctrine bridge first.
 
 ```json
 {
@@ -58,10 +58,10 @@ class MyController extends Controller
     public function indexAction(Request $request)
     {
         /* @var \Isolate\PersistenceContext\Transaction\Doctrine\ORMTransaction $transaction */
-        $transaction = $this->get('isolate')->getContext('doctrine_orm')->openTransaction();
+        $transaction = $this->get('isolate')->openTransaction('doctrine_orm');
         $entity = new Entity("norbert@orzechowicz.pl");
         $transaction->persist($entity);
-        $this->get('isolate')->getContext('doctrine_orm')->closeTransaction();
+        $this->get('isolate')->closeTransaction('doctrine_orm');
     }
 
 }
