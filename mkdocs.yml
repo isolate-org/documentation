@@ -25,5 +25,5 @@ pages:
       - Bridge: extensions/doctrine/bridge.md
     - Tactician:
       - Bridge: extensions/tactician/bridge.md
-theme: mkdocs
+theme: readthedocs
 use_directory_urls: false
