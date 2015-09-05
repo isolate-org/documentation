@@ -1,25 +1,29 @@
 site_name: Isolate
-theme_dir: theme
 pages:
   - Home: index.md
   - Isolate: isolate/isolate.md
-  - Unit of Work:
-    - Getting Started: unit-of-work/getting-started.md
-    - Entity Definition: unit-of-work/entity-definition.md
-    - Entity Internal States: unit-of-work/entity-internal-states.md
-    - Command Handlers: unit-of-work/command-handlers.md
-    - Associations: unit-of-work/associations.md
-  - Lazy Objects:
-    - Getting Started: lazy-objects/getting-started.md
-    - Proxy Definition: lazy-objects/proxy-definition.md
-    - Initializers: lazy-objects/initializers.md
-    - Replacements: lazy-objects/replacements.md
-  - Symfony: 
-    - Installation and configuration: symfony/installation-and-configuration.md
-    - Transaction Factories: symfony/transaction-factories.md
-    - Usage Examples: symfony/usage-examples.md
-    - Doctrine Bridge: symfony/doctrine-bridge.md
-  - Doctrine:
-    - Bridge: doctrine/bridge.md
-theme: readthedocs
+  - Framework:
+    - Getting Started: framework/index.md
+    - Unit of Work:
+      - Getting Started: framework/unit-of-work/getting-started.md
+      - Entity Definition: framework/unit-of-work/entity-definition.md
+      - Entity Internal States: framework/unit-of-work/entity-internal-states.md
+      - Command Handlers: framework/unit-of-work/command-handlers.md
+      - Associations: framework/unit-of-work/associations.md
+    - Lazy Objects:
+      - Getting Started: framework/lazy-objects/getting-started.md
+      - Proxy Definition: framework/lazy-objects/proxy-definition.md
+      - Property Value Initializers: framework/lazy-objects/initializers.md
+      - Method Replacements: framework/lazy-objects/replacements.md
+  - Extensions: 
+    - Symfony: 
+      - Installation and configuration: extensions/symfony/installation-and-configuration.md
+      - Transaction Factories: extensions/symfony/transaction-factories.md
+      - Usage Examples: extensions/symfony/usage-examples.md
+      - Doctrine Bridge: extensions/symfony/doctrine-bridge.md
+    - Doctrine:
+      - Bridge: extensions/doctrine/bridge.md
+    - Tactician:
+      - Bridge: extensions/tactician/bridge.md
+theme: mkdocs
 use_directory_urls: false

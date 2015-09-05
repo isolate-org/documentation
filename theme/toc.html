@@ -1,13 +1,11 @@
 {% if nav_item.children %}
-<li class="toctree-l1 {% if nav_item.active%}current{%endif%}">
-    <a class="{% if nav_item.active%}current{%endif%}" href="{{ nav_item.children[0].url }}">{{ nav_item.title }}</a>
+<ul class="subnav">
+    <li><span>{{ nav_item.title }}</span></li>
 
-    {% if nav_item == current_page %}
-        {% for nav_item in nav_item.children %}
-        {% include 'toc.html' %}
-        {% endfor %}
-    {% endif %}
-</li>
+    {% for nav_item in nav_item.children %}
+    {% include 'toc.html' %}
+    {% endfor %}
+</ul>
 {% else %}
 <li class="toctree-l1 {% if nav_item.active%}current{%endif%}">
     <a class="{% if nav_item.active%}current{%endif%}" href="{{ nav_item.url }}">{{ nav_item.title }}</a>

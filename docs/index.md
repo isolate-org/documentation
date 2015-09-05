@@ -1,7 +1,7 @@
 ![Isolate](/img/logo.jpg)
 
 
-# Isolate: Treat your data storage as an implementation detail
+# Treat your data storage as an implementation detail
 
 Almost every single web application nowadays use some kind of storage. It can be SQL Database, NoSql Database, filesystem or
 some kind of key value storage like Redis. The mission of Isolate is to provide common interfaces that describe the operations
@@ -29,7 +29,7 @@ Isolate brings you following implementations.
 
 ### Isolate Framework
 
-*Most flexible but also quite complex implementation of Isolate, it use components like:*
+*Most flexible but also quite complex implementation of Isolate, it is build on top of following components:*
 
 - [Unit of Work](https://github.com/isolate-org/unit-of-work)
 - [Lazy Objects](https://github.com/isolate-org/lazy-objects) 
@@ -67,13 +67,14 @@ It has no performance impact.*
 
 Isolate can be integrated easily with following frameworks:
 
-- [Symfony2](symfony/installation-and-configuration.md)
+- [Symfony2](extensions/symfony/installation-and-configuration.md)
 - Laravel - we are looking for some help here
 - Zend2 - we are looking for some help here
 
 We also provide extensions for following libraries:
 
-- [Tactician Command Bus](tactician/integration.md)
+- [Doctrine ORM and ODM](extensions/doctrine/bridge.md)
+- [Tactician Command Bus](extensions/tactician/bridge.md)
 
 # License
 

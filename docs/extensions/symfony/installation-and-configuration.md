@@ -8,6 +8,7 @@ Add Isolate bundle dependencies to composer.json file in your project
         "isolate/unit-of-work": "1.0.*@dev",
         "isolate/lazy-objects": "1.0.*@dev",
         "isolate/isolate": "1.0.*@dev",
+        "isolate/isolate-framework": "1.0.*@dev",
         "isolate/symfony-bundle": "1.0.*@dev"
     }
 }
