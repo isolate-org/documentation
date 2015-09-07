@@ -20,7 +20,7 @@ $entity->changeEntityState('new value');
 $transaction->closeTransaction();
 ```
 
-### Why should you use Isolate or similar abstraction layer?
+### Why to use Isolate or similar abstraction layer?
 
 Most important and probably the only argument is a **possibility to change storage without touching 
 application code**. Ok but how many times storage is replaced during application lifecycle? Once, maybe twice? 
