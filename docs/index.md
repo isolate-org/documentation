@@ -24,8 +24,9 @@ $transaction->closeTransaction();
 
 Most important and probably the only argument is a **possibility to change storage without touching 
 application code**. Ok but how many times storage is replaced during application lifecycle? Once, maybe twice? 
-Yea but still such change without proper abstraction can be deadly for a project. Anyway this abstraction should not be
-used because you will change application storage, it should be used because you might want (or be forced) to do it someday.  
+Still such change without proper abstraction can be deadly for a project, and how many times project can actually die? 
+Anyway data storage abstraction should not be used because you will change application storage, it should be used because 
+you might want (or be forced) to do it someday. Think about it as about a long term investment. 
 Isolating storage related code from application allows that application to be tested not only against in memory storage implementation.
 Simplified filesystem based storage could be quite useful for integration tests especially for complex systems.
 
