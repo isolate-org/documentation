@@ -20,6 +20,15 @@ $entity->changeEntityState('new value');
 $transaction->closeTransaction();
 ```
 
+### Why should you use Isolate or similar abstraction layer?
+
+Most important and probably the only argument is a **possibility to change storage without touching 
+application code**. Ok but how many times storage is replaced during application lifecycle? Once, maybe twice? 
+Yea but still such change without proper abstraction can be deadly for a project. Anyway this abstraction should not be
+used because you will change application storage, it should be used because you might want (or be forced) to do it someday.  
+Isolating storage related code from application allows that application to be tested not only against in memory storage implementation.
+Simplified filesystem based storage could be quite useful for integration tests especially for complex systems.
+
 # Implementations
 
 Isolate by itself does not implement any data storage, this mean that Isolate gives interfaces you can use to implement your 
@@ -54,8 +63,6 @@ It has no performance impact.*
 
 - startups 
 - applications based on any kind of Sql or NonSql database
-
-
 
 
 
