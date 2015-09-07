@@ -98,4 +98,4 @@ Classes, interfaces and methods that are considered as public API are marked wit
 
 If you have any questions about Isolate, or need any help with the implementation or just want to chat we have an 
 [twitter account @isolate_php](https://twitter.com/isolate_php).
-You can also send a email to [manorbert@orzechowicz.pl](mailto:norbert@orzechowicz.pl)
+You can also send a email to [norbert@orzechowicz.pl](mailto:norbert@orzechowicz.pl)
