@@ -70,7 +70,7 @@ It will generate proxies even when they don't exists. In development mode missin
 # Entities
 
 In order to create entity definitions that are automatically registered in Unit of Work you should use tagged services
-feature of Symfony service container. Each definition should be created by instance of ``Isolate\Symfony\IsolateBundle\Entity\Definition\Factory``
+feature of Symfony service container. Each definition should be created by instance of ``Isolate\Framework\UnitOfWork\Entity\Definition\Factory``
 that is registered as a service and tagged with ``isolate.lazy_object.definition.factory``.
 
 Example implementation of Factory:
@@ -82,7 +82,7 @@ namespace GithubManager\Application\AppBundle\Entity\Definition;
 
 use GithubManager\Application\AppBundle\Entity\Definition\User\EditCommandHandler;
 use GithubManager\Infrastructure\Github\Client;
-use Isolate\Symfony\IsolateBundle\Entity\Definition\Factory;
+use Isolate\Framework\UnitOfWork\Entity\Definition\Factory;
 use Isolate\UnitOfWork\Entity\ClassName;
 use Isolate\UnitOfWork\Entity\Definition;
 
@@ -142,7 +142,7 @@ services:
 # Lazy Objects
 
 In order to create proxy definitions that are automatically registered in Lazy Objects Wrapper you should use tagged services
-feature of Symfony service container. Each definition should be created by instance of ``Isolate\Symfony\IsolateBundle\LazyObject\Definition\Factory``
+feature of Symfony service container. Each definition should be created by instance of ``Isolate\Framework\LazyObjects\Definition\Factory``
 that is registered as a service and tagged with ``isolate.lazy_object.definition.factory``.
 
 Example implementation of Factory:
@@ -161,7 +161,7 @@ use Isolate\LazyObjects\Proxy\LazyProperty;
 use Isolate\LazyObjects\Proxy\Method;
 use Isolate\LazyObjects\Proxy\MethodReplacement;
 use Isolate\LazyObjects\Proxy\Property\Name;
-use Isolate\Symfony\IsolateBundle\LazyObject\Definition\Factory;
+use Isolate\Framework\LazyObjects\Definition\Factory;
 use GithubManager\Infrastructure\Github\Adapter\KnpLabs\Client;
 
 class UserFactory implements Factory
