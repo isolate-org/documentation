@@ -201,7 +201,7 @@ class UserIdentificationStrategy implements IdentificationStrategy
             throw new \InvalidArgumentException();
         }
 
-        return $this->hasUserWithEmail($entity->getEmail);
+        return $this->client->hasUserWithEmail($entity->getEmail);
     }
 
     /**
